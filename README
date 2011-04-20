@@ -1,0 +1,19 @@
+=RDFSAND=
+- Author: enridaga
+- Last changes: 2011-04-20
+- License: is still to define :(
+
+This project includes PHP classes to easier the development of Semantic Web applications.
+All is built on top of ARC2.
+
+==Included==
+* Bucket: a class for easy exploring triples in a functional style syntax. 
+* Shape:  a class to map RDF property sets to runtime generated PHP objects (ongoing work)
+
+==Examples==
+TODO
+
+==Future work (it would be nice...)==
+* Bucket:
+** Support for simple rules, for instance owl:sameAs resolution
+
