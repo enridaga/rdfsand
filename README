@@ -11,9 +11,33 @@ All is built on top of ARC2.
 * Shape:  a class to map RDF property sets to runtime generated PHP objects (ongoing work)
 
 ==Examples==
-TODO
+
+===How to get a Bucket===
+set_include_path('../arc2'. PATH_SEPARATOR . get_include_path() );
+set_include_path('../RDFSand'. PATH_SEPARATOR . get_include_path() );
+
+include_once 'ARC2.php';
+include_once 'ARC2_BucketPlugin.php';
+# Get an empty bucket
+$eBucket = ARC2::getComponent("BucketPlugin")->getBucket(array());
+
 
 ==Future work (it would be nice...)==
 * Bucket:
 ** Support for simple rules, for instance owl:sameAs resolution
 
+==Changelog==
+===2011-04-25===
+* Support for arrays in subject, property and object filter parameters. Triple matches if at least 1 of the given option is satisfied.
+* More efficient filter preparation (added a prepareFilterIri and prepareFilterObject functions)
+* The method Bucket::isIRI() now supports the following schemas:
+ - http
+ - https
+ - ftp
+ - urn
+ - svn
+ - svn+ssh
+ - doi
+ - isbn
+ - tel
+* Fixed a bug in the Bucket::describe() when the second parameter is 'true'
